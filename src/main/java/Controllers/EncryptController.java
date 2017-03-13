@@ -13,7 +13,7 @@ import java.nio.file.Paths;
 public class EncryptController {
 
     public static void Encrypt(InputStream in) {
-
+            System.out.println("\nEncryption simulation of file: "+LogicController.getFileName());
     }
 
 }
