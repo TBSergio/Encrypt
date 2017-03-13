@@ -16,6 +16,7 @@ public class LogicController {
 
     private static boolean Flag = false;
     private static InputStream in = null;
+    private static String fileName = null;
     public final static void clearConsole() {
         try {
             final String os = System.getProperty("os.name");
@@ -40,13 +41,19 @@ public class LogicController {
                     exit(0);
                 Path path = Paths.get(pathString);
                 in = Files.newInputStream(path);
+                fileName = path.getFileName().toString();
                 Flag = true;
-
             } catch (IOException e) {
                 System.out.println("Invalid Path to File or File Does'nt Exist!");
             }
         }
         return in;
+    }
+
+
+    public static String getFileName()
+    {
+        return fileName;
     }
 
 }
