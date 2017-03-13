@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f497b340-2f85-47cc-b138-57d9897f9cdc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Controllers/DecryptController.java" afterPath="$PROJECT_DIR$/src/main/java/Controllers/DecryptController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Controllers/EncryptController.java" afterPath="$PROJECT_DIR$/src/main/java/Controllers/EncryptController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -58,8 +56,8 @@
       <file leaf-file-name="DecryptController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/DecryptController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="238">
+              <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -248,7 +246,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunManager" selected="Application.main">
     <configuration default="false" name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -668,7 +666,7 @@
       <workItem from="1488828489453" duration="2628000" />
       <workItem from="1488831151746" duration="3987000" />
       <workItem from="1489424997747" duration="102000" />
-      <workItem from="1489425152154" duration="735000" />
+      <workItem from="1489425152154" duration="824000" />
     </task>
     <task id="LOCAL-00001" summary="First Stage&#10;-----------&#10;1.LogicController -added method to check if a path is correct and keep asking for a path untill it is correct or * is pressed&#10;2.main - added calls to Encrypt and Decrypt">
       <created>1488834976676</created>
@@ -684,11 +682,18 @@
       <option name="project" value="LOCAL" />
       <updated>1489425638034</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="First Stage - Complete&#10;-----------&#10;1.LogicController -added method to return fileName&#10;2.Encrypt/DecryptController - added &quot;simulating&quot; functions">
+      <created>1489425951149</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1489425951149</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7452000" />
+    <option name="totallyTimeSpent" value="7541000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -709,7 +714,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.141258" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.141258" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -782,7 +787,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Stage&#10;-----------&#10;1.LogicController -added method to check if a path is correct and keep asking for a path untill it is correct or * is pressed&#10;2.main - added calls to Encrypt and Decrypt" />
-    <option name="LAST_COMMIT_MESSAGE" value="First Stage&#10;-----------&#10;1.LogicController -added method to check if a path is correct and keep asking for a path untill it is correct or * is pressed&#10;2.main - added calls to Encrypt and Decrypt" />
+    <MESSAGE value="First Stage - Complete&#10;-----------&#10;1.LogicController -added method to return fileName&#10;2.Encrypt/DecryptController - added &quot;simulating&quot; functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="First Stage - Complete&#10;-----------&#10;1.LogicController -added method to return fileName&#10;2.Encrypt/DecryptController - added &quot;simulating&quot; functions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -987,8 +993,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Controllers/DecryptController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="238">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
           <folding />
         </state>
       </provider>
