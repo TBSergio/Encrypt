@@ -27,6 +27,9 @@ public class LogicControllerTest {
 
         assertEquals(1,CM.clearConsole("Windows"));
         assertEquals(2,CM.clearConsole("Linux"));
+
+        //LogicController cont = new LogicController();
+        //assertEquals(1,cont.clearConsole(""));
     }
     @Test(expected = RuntimeException.class)
     public void testCheckFilePath_ExceptionThrow()

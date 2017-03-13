@@ -7,8 +7,9 @@ import java.io.InputStream;
  */
 public class DecryptController {
 
-    public void Decrypt(InputStream in) {
+    public int Decrypt(InputStream in) {
         System.out.println("\nDecryption simulation of file: "+LogicController.getFileName()+"\n");
+        return 1;
     }
 
 
