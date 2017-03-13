@@ -666,7 +666,7 @@
       <workItem from="1488828489453" duration="2628000" />
       <workItem from="1488831151746" duration="3987000" />
       <workItem from="1489424997747" duration="102000" />
-      <workItem from="1489425152154" duration="824000" />
+      <workItem from="1489425152154" duration="839000" />
     </task>
     <task id="LOCAL-00001" summary="First Stage&#10;-----------&#10;1.LogicController -added method to check if a path is correct and keep asking for a path untill it is correct or * is pressed&#10;2.main - added calls to Encrypt and Decrypt">
       <created>1488834976676</created>
@@ -689,15 +689,22 @@
       <option name="project" value="LOCAL" />
       <updated>1489425951149</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="First Stage - Complete&#10;-----------&#10;1.LogicController -added method to return fileName&#10;2.Encrypt/DecryptController - added &quot;simulating&quot; functions">
+      <created>1489425987750</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1489425987750</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7541000" />
+    <option name="totallyTimeSpent" value="7556000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
