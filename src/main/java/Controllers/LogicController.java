@@ -15,10 +15,10 @@ import static java.lang.System.exit;
 public class LogicController {
 
     private static boolean Flag = false;
-    private static InputStream in = null;
     private static String fileName = null;
+    private static String filePath = null;
 
-    public int clearConsole(String str){
+    public static int clearConsole(String str){
         try {
             final String os = System.getProperty("os.name");
             if (os.contains("Windows")) {
@@ -38,10 +38,11 @@ public class LogicController {
             return 0;
         }
     }
-    public InputStream checkFilePath(String str)
-    {
+
+    public static InputStream checkFilePath(String str) {
         Scanner input = new Scanner(System.in);
         Flag = false;
+        InputStream temp = null;
         while(!Flag) {
             try {
                 System.out.print("Please Insert Valid File Path for Encryption!(Or '*' To Close)\nFile Path:");
@@ -50,21 +51,19 @@ public class LogicController {
                 if(!pathString.equals("*"))
                 {
                     Path path = Paths.get(pathString);
-                    in = Files.newInputStream(path);
+                    temp = Files.newInputStream(path);
                     fileName = path.getFileName().toString();
+                    filePath = path.getParent().toString();
                 }
                 Flag = true;
             } catch (IOException e) {
                 System.out.println("Invalid Path to File or File Does'nt Exist!");
             }
         }
-        return in;
+        return temp;
     }
 
-
-    public static String getFileName()
-    {
-        return fileName;
-    }
+    public static String getFileName() {return fileName;}
+    public static String getFilePath() {return filePath;}
 
 }
