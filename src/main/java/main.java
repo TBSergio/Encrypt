@@ -22,8 +22,6 @@ public class main{
 
     public static void main(String[] args)
     {
-        // while(choice!=0) //loop on main menu - clearConsole will NOT clear the console inside the IDE
-        //{
         LogicController logic = new LogicController();
         logic.clearConsole("");
         InputStream in;
@@ -63,6 +61,5 @@ public class main{
                     break;
             }
         }
-        //  }
     }
 }
