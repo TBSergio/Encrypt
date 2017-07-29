@@ -22,7 +22,7 @@ public class LogicController {
         try {
             final String os = System.getProperty("os.name");
             if (os.contains("Windows")) {
-                Runtime.getRuntime().exec("cmd /c cls");
+                Runtime.getRuntime().exec("cmd cls");
                 return 1;
             }
             else {
