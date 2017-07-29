@@ -18,11 +18,11 @@ public class LogicController {
     private static InputStream in = null;
     private static String fileName = null;
 
-    public int clearConsole(String str) {
+    public int clearConsole(String str){
         try {
             final String os = System.getProperty("os.name");
             if (os.contains("Windows")) {
-                Runtime.getRuntime().exec("cmd cls");
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
                 return 1;
             }
             else {
@@ -30,6 +30,10 @@ public class LogicController {
                 return 2;
             }
         } catch (IOException ex) {
+            System.out.println("Sorry - Could'nt clear console!\n");
+            return 0;
+        }
+        catch (InterruptedException e ) {
             System.out.println("Sorry - Could'nt clear console!\n");
             return 0;
         }

@@ -45,4 +45,12 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
-.idea/workspace.xml
+.project
+
+# Intellij
+.idea/
+*.iml
+
+# Maven
+log/
+target/
