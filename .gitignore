@@ -50,7 +50,11 @@ Temporary Items
 # Intellij
 .idea/
 *.iml
+*.MF
+*.jar
+!libs/**/*.jar
 
 # Maven
 log/
 target/
+out/
