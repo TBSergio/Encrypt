@@ -1,11 +1,13 @@
 package Controllers;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 import static java.lang.System.exit;
 
@@ -17,6 +19,8 @@ public class LogicController {
     private static boolean Flag = false;
     private static String fileName = null;
     private static String filePath = null;
+    private static Scanner hold = new Scanner(System.in);
+    public static final int sigLen = 10;
 
     public static int clearConsole(String str){
         try {
@@ -57,13 +61,39 @@ public class LogicController {
                 }
                 Flag = true;
             } catch (IOException e) {
-                System.out.println("Invalid Path to File or File Does'nt Exist!");
+                LogicController.clearConsole("");
+                System.out.println("Invalid Path to File or File Does'nt Exist!\nPlease Press Enter to continue...");
+                LogicController.hold.nextLine();
             }
         }
         return temp;
     }
 
-    public static String getFileName() {return fileName;}
+
+    public static byte[] getBytesFromInputStream(InputStream is) throws IOException
+    {
+        try (ByteArrayOutputStream os = new ByteArrayOutputStream();)
+        {
+            byte[] buffer = new byte[0xFFFF];
+
+            for (int len; (len = is.read(buffer)) != -1;)
+                os.write(buffer, 0, len);
+
+            os.flush();
+
+            return os.toByteArray();
+        }
+    }
+
+    public static String getFileName() {
+        String[] fileNameParts = fileName.split(Pattern.quote("."),2);
+        return fileNameParts[0];
+    }
+
+    public static String getFileType() {
+        String[] fileNameParts = fileName.split(Pattern.quote("."),2);
+        return fileNameParts[1];
+    }
     public static String getFilePath() {return filePath;}
 
 }

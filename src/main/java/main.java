@@ -32,9 +32,8 @@ public class main{
             try {
                 choice = input.nextInt();
             } catch (InputMismatchException e) {
-                System.out.println("Invalid Input!\nPress Eneter to continue...");
                 choice = 999;
-                input.next();
+                input.nextLine();//psuedo "flush" for input stream, without it inputstream keeps reading previous charecter - needs further investigation.
             }
 
             switch (choice) {
