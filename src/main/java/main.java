@@ -15,51 +15,59 @@ import java.util.Scanner;
  */
 public class main{
 
-    private static int choice=999;
+    private static int choice=-1;
     private static boolean Flag=false;
-
     private static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args)
     {
-        LogicController logic = new LogicController();
-        logic.clearConsole("");
+        LogicController.clearConsole("");
         InputStream in;
+
         while(!Flag) {
-            logic.clearConsole("");
-            System.out.println("Please Select An Action To Perform:\n\n1.Encryption\n2.Decryption\n\n0.Exit Applicatin");
-            System.out.print("\nSelected Action:");
+            LogicController.clearConsole("");
+
+            printRequest();
+
             try {
                 choice = input.nextInt();
             } catch (InputMismatchException e) {
-                System.out.println("Invalid Input!");
                 choice = 999;
+                input.nextLine();//psuedo "flush" for input stream, without it inputstream keeps reading previous charecter - needs further investigation.
             }
+
             switch (choice) {
                 case 0:
                     Flag = true;
                     break;
                 case 1:
-                    logic.clearConsole("");
-                    in = logic.checkFilePath("");
+                    LogicController.clearConsole("");
+                    in = LogicController.checkFilePath("");
                     if(in != null) {
                         EncryptController en = new EncryptController();
                         en.Encrypt(in);
                     }
-                    choice = 999;
                     break;
                 case 2:
-                    logic.clearConsole("");
-                    in = logic.checkFilePath("");
+                    LogicController.clearConsole("");
+                    in = LogicController.checkFilePath("");
                     if(in != null) {
                         DecryptController de = new DecryptController();
                         de.Decrypt(in);
                     }
-                    choice = 999;
-                    break;
-                default:
                     break;
             }
         }
     }
+    public static void printRequest() {
+        if(choice == 999)
+            System.out.print("Previous Input Incorrect - Please Select a Valid Action:\n");
+        else
+            System.out.print("Please Select An Action To Perform:\n");
+
+        System.out.println("\n1.Encryption\n2.Decryption\n\n0.Exit Application");
+        System.out.print("\nSelected Action:");
+    }
+
+
 }

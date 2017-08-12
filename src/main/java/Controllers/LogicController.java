@@ -1,11 +1,13 @@
 package Controllers;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 import static java.lang.System.exit;
 
@@ -15,10 +17,12 @@ import static java.lang.System.exit;
 public class LogicController {
 
     private static boolean Flag = false;
-    private static InputStream in = null;
     private static String fileName = null;
+    private static String filePath = null;
+    private static Scanner hold = new Scanner(System.in);
+    public static final int sigLen = 10;
 
-    public int clearConsole(String str){
+    public static int clearConsole(String str){
         try {
             final String os = System.getProperty("os.name");
             if (os.contains("Windows")) {
@@ -38,10 +42,11 @@ public class LogicController {
             return 0;
         }
     }
-    public InputStream checkFilePath(String str)
-    {
+
+    public static InputStream checkFilePath(String str) {
         Scanner input = new Scanner(System.in);
         Flag = false;
+        InputStream temp = null;
         while(!Flag) {
             try {
                 System.out.print("Please Insert Valid File Path for Encryption!(Or '*' To Close)\nFile Path:");
@@ -50,21 +55,45 @@ public class LogicController {
                 if(!pathString.equals("*"))
                 {
                     Path path = Paths.get(pathString);
-                    in = Files.newInputStream(path);
+                    temp = Files.newInputStream(path);
                     fileName = path.getFileName().toString();
+                    filePath = path.getParent().toString();
                 }
                 Flag = true;
             } catch (IOException e) {
-                System.out.println("Invalid Path to File or File Does'nt Exist!");
+                LogicController.clearConsole("");
+                System.out.println("Invalid Path to File or File Does'nt Exist!\nPlease Press Enter to continue...");
+                LogicController.hold.nextLine();
             }
         }
-        return in;
+        return temp;
     }
 
 
-    public static String getFileName()
+    public static byte[] getBytesFromInputStream(InputStream is) throws IOException
     {
-        return fileName;
+        try (ByteArrayOutputStream os = new ByteArrayOutputStream();)
+        {
+            byte[] buffer = new byte[0xFFFF];
+
+            for (int len; (len = is.read(buffer)) != -1;)
+                os.write(buffer, 0, len);
+
+            os.flush();
+
+            return os.toByteArray();
+        }
     }
+
+    public static String getFileName() {
+        String[] fileNameParts = fileName.split(Pattern.quote("."),2);
+        return fileNameParts[0];
+    }
+
+    public static String getFileType() {
+        String[] fileNameParts = fileName.split(Pattern.quote("."),2);
+        return fileNameParts[1];
+    }
+    public static String getFilePath() {return filePath;}
 
 }
