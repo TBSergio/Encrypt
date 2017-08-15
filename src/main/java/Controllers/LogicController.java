@@ -49,7 +49,7 @@ public class LogicController {
         InputStream temp = null;
         while(!Flag) {
             try {
-                System.out.print("Please Insert Valid File Path for Encryption!(Or '*' To Close)\nFile Path:");
+                System.out.print("Please Insert Valid File Path!(Or '*' To Close)\nFile Path:");
                 String pathString = input.next();
                 System.out.println("----------------------");
                 if(!pathString.equals("*"))
@@ -64,14 +64,14 @@ public class LogicController {
                 LogicController.clearConsole("");
                 System.out.println("Invalid Path to File or File Does'nt Exist!\nPlease Press Enter to continue...");
                 LogicController.hold.nextLine();
+                LogicController.hold.nextLine();
             }
         }
         return temp;
     }
 
 
-    public static byte[] getBytesFromInputStream(InputStream is) throws IOException
-    {
+    public static byte[] getBytesFromInputStream(InputStream is) throws IOException {
         try (ByteArrayOutputStream os = new ByteArrayOutputStream();)
         {
             byte[] buffer = new byte[0xFFFF];
@@ -94,6 +94,7 @@ public class LogicController {
         String[] fileNameParts = fileName.split(Pattern.quote("."),2);
         return fileNameParts[1];
     }
+
     public static String getFilePath() {return filePath;}
 
 }

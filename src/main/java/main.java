@@ -19,8 +19,7 @@ public class main{
     private static boolean Flag=false;
     private static Scanner input = new Scanner(System.in);
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         LogicController.clearConsole("");
         InputStream in;
 
@@ -42,6 +41,7 @@ public class main{
                     break;
                 case 1:
                     LogicController.clearConsole("");
+                    System.out.println("Please Insert any binary file Path for Encryption!\n");
                     in = LogicController.checkFilePath("");
                     if(in != null) {
                         EncryptController en = new EncryptController();
@@ -50,6 +50,7 @@ public class main{
                     break;
                 case 2:
                     LogicController.clearConsole("");
+                    System.out.println("Please Insert .encrypted file Path for decryption!\n");
                     in = LogicController.checkFilePath("");
                     if(in != null) {
                         DecryptController de = new DecryptController();
@@ -59,6 +60,7 @@ public class main{
             }
         }
     }
+
     public static void printRequest() {
         if(choice == 999)
             System.out.print("Previous Input Incorrect - Please Select a Valid Action:\n");
